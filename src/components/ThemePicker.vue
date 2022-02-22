@@ -1,13 +1,21 @@
 <template>
-  <el-color-picker class="u-theme-picker" v-model="color" :predefine="themeList"> </el-color-picker>
+  <el-color-picker
+    class="u-theme-picker"
+    v-model="themeColor"
+    :predefine="themeList"
+    @change="handleChangeColor"
+  >
+  </el-color-picker>
 </template>
 
 <script>
+import { mapMutations, mapActions } from 'vuex'
+import store from '@/store'
 export default {
   name: 'ThemePicker',
   data() {
     return {
-      color: '#409EFF',
+      themeColor: store.state.themeColor,
       themeList: [
         '#409EFF',
         '#3C6CFE',
@@ -19,6 +27,15 @@ export default {
         '#7A40F2',
       ],
     }
+  },
+  methods: {
+    ...mapMutations(['setTheme']),
+    ...mapActions(['changeThemeStyle']),
+    handleChangeColor(val) {
+      this.setTheme(val)
+      this.changeThemeStyle()
+      console.log(val)
+    },
   },
 }
 </script>
