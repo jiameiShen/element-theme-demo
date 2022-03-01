@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { writeNewStyle } from '@/tools/theme/index'
-import variables from '@/tools/theme/variables'
+import variables from '@/assets/scss/var.scss'
 
 Vue.use(Vuex)
 

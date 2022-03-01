@@ -1,6 +1,6 @@
 <template>
   <div class="g-header">
-    <div class="logo">XXXX</div>
+    <div class="logo">主题切换演示</div>
     <div class="menu-list">
       <div class="menu-item">
         切换主题

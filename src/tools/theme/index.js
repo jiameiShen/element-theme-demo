@@ -1,14 +1,12 @@
 import { generateColors } from './color'
 import axios from 'axios'
 import formula from './formula.json'
-import variables from "./variables";
+import variables from '@/assets/scss/var.scss'
 
 let originalStyle = ''
 
 export function writeNewStyle(themeColor) {
   let colors = generateColors(themeColor)
-
-  console.log(colors)
   let cssText = originalStyle
   let colorsCssText = ''
   Object.keys(colors).forEach((key) => {
@@ -45,8 +43,6 @@ export function getStyleTemplate(data) {
   Object.keys(formula).forEach((key) => {
     colorMap.set(colors[key], key)
   })
-
-  console.log(colorMap)
 
   for (let [key, value] of colorMap) {
     data = data.replace(new RegExp(key, 'ig'), value)

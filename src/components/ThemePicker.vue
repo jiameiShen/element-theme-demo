@@ -34,7 +34,6 @@ export default {
     handleChangeColor(val) {
       this.setTheme(val)
       this.changeThemeStyle()
-      console.log(val)
     },
   },
 }
